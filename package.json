@@ -1,0 +1,42 @@
+{
+  "name": "@sourcegem/validator",
+  "version": "1.0.0",
+  "description": "A simple Node JS data validator",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --declaration",
+    "watch": "tsc --watch",
+    "clean-build": "rimraf ./dist && tsc --declaration",
+    "test": "mocha --require ts-node/register tests/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sourcegem/validator.git"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "typescript",
+    "data",
+    "validation"
+  ],
+  "author": "Matthieu 'Aeres-Blade' Arques <aeresblade@sourcegem.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sourcegem/validator/issues"
+  },
+  "homepage": "https://github.com/sourcegem/validator#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^12.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  },
+  "files": [
+    "dist/**/*"
+  ]
+}
