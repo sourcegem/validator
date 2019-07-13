@@ -81,8 +81,10 @@ export class RuleResult extends ParenthesisResultNode
 	public sub(operator: ResultNodeOperator, identifier: string | undefined, rule: Rule, data: any): RuleResult
 	{
 		let result = new RuleResult(operator, rule, identifier);
-		this._nodes.push(result);
 		rule.validate(data, result);
+
+		if(result.nodes.length > 0)
+			this._nodes.push(result);
 
 		return result;
 	}
