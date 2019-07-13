@@ -9,9 +9,9 @@
 export {Rule} from './Rule';
 
 export {OrRule} from './OrRule';
-export {StringRule, StringRuleOptions, StringRuleErrorIdentifier} from './StringRule';
-export {NumberRule, NumberRuleOptions, NumberRuleErrorIdentifier} from './NumberRule';
-export {BooleanRule, BooleanRuleOptions, BooleanRuleErrorIdentifier} from './BooleanRule';
-export {ObjectRule, ObjectElementOptions, ObjectRuleErrorIdentifier, ObjectRuleStructure} from './ObjectRule';
-export {ArrayRule, ArrayRuleOptions, ArrayRuleErrorIdentifier} from './ArrayRule';
+export {StringRule, StringRuleOptions, StringRuleError} from './StringRule';
+export {NumberRule, NumberRuleOptions, NumberRuleError} from './NumberRule';
+export {BooleanRule, BooleanRuleOptions, BooleanRuleError} from './BooleanRule';
+export {ObjectRule, ObjectElementOptions, ObjectRuleError, ObjectRuleStructure} from './ObjectRule';
+export {ArrayRule, ArrayRuleOptions, ArrayRuleError} from './ArrayRule';
 export {ArrayableRule} from './ArrayableRule';
