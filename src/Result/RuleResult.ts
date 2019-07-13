@@ -45,9 +45,9 @@ export class RuleResult extends ParenthesisResultNode
 	 * @param 	identifier	The identifier of the given rule, used to construct the error tree
 	 * @param 	rule 		The Rule used for the validation
 	 * @param 	data 		The data to be validated
-	 * @return 				This RuleResult
+	 * @return 				The newly created RuleResult used to validate the rule
 	 */
-	public andSub(identifier: string | undefined, rule: Rule, data: any): this
+	public andSub(identifier: string | undefined, rule: Rule, data: any): RuleResult
 	{
 		return this.sub(ResultNodeOperator.And, identifier, rule, data);
 	}
@@ -60,9 +60,9 @@ export class RuleResult extends ParenthesisResultNode
 	 * @param 	identifier	The identifier of the given rule, used to construct the error tree
 	 * @param 	rule 		The Rule used for the validation
 	 * @param 	data 		The data to be validated
-	 * @return 				This RuleResult
+	 * @return 				The newly created RuleResult used to validate the rule
 	 */
-	public orSub(identifier: string | undefined, rule: Rule, data: any): this
+	public orSub(identifier: string | undefined, rule: Rule, data: any): RuleResult
 	{
 		return this.sub(ResultNodeOperator.And, identifier, rule, data);
 	}
@@ -76,14 +76,14 @@ export class RuleResult extends ParenthesisResultNode
 	 * @param 	identifier	The identifier of the given rule, used to construct the error tree
 	 * @param 	rule 		The Rule used for the validation
 	 * @param 	data 		The data to be validated
-	 * @return 				This RuleResult
+	 * @return 				The newly created RuleResult used to validate the rule
 	 */
-	public sub(operator: ResultNodeOperator, identifier: string | undefined, rule: Rule, data: any): this
+	public sub(operator: ResultNodeOperator, identifier: string | undefined, rule: Rule, data: any): RuleResult
 	{
 		let result = new RuleResult(operator, rule, identifier);
 		this._nodes.push(result);
 		rule.validate(data, result);
 
-		return this;
+		return result;
 	}
 }
