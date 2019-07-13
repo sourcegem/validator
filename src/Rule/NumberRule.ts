@@ -101,17 +101,17 @@ export class NumberRule implements Rule
 	public validate(data: any, result: RuleResult): void
 	{
 		if(data === null || data === undefined)
-			return void(this.options.nullable ? undefined : result.and({error: NumberRuleError.Null, value: data, data: {}}));
+			return void(this.options.nullable ? undefined : result.and({name: NumberRuleError.Null, value: data, data: {}}));
 
 		if(typeof data !== 'number')
-			return void result.and({error: NumberRuleError.Type, value: data, data: {}});
+			return void result.and({name: NumberRuleError.Type, value: data, data: {}});
 
 		if(!this.options.floating && (data % 1 !== 0))
-			result.and({error: NumberRuleError.Float, value: data, data: {}})
+			result.and({name: NumberRuleError.Float, value: data, data: {}})
 
 		if(this.options.min !== undefined && data < this.options.min)
-			result.and({error: NumberRuleError.Min, value: data, data: {min: this.options.min}});
+			result.and({name: NumberRuleError.Min, value: data, data: {min: this.options.min}});
 		else if(this.options.max !== undefined && data > this.options.max)
-			result.and({error: NumberRuleError.Max, value: data, data: {max: this.options.max}});
+			result.and({name: NumberRuleError.Max, value: data, data: {max: this.options.max}});
 	}
 }

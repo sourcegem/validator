@@ -104,17 +104,17 @@ export class StringRule implements Rule
 	public validate(data: any, result: RuleResult): void
 	{
 		if(data === null || data === undefined)
-			return void(this.options.nullable ? undefined : result.and({error: StringRuleError.Null, value: data, data: {}}));
+			return void(this.options.nullable ? undefined : result.and({name: StringRuleError.Null, value: data, data: {}}));
 
 		if(typeof data !== 'string')
-			return void result.and({error: StringRuleError.Type, value: data, data: {}});
+			return void result.and({name: StringRuleError.Type, value: data, data: {}});
 
 		if(this.options.minLength !== undefined && data.length < this.options.minLength)
-			result.and({error: StringRuleError.MinLength, value: data, data: {minLength: this.options.minLength, actualLength: data.length}});
+			result.and({name: StringRuleError.MinLength, value: data, data: {minLength: this.options.minLength, actualLength: data.length}});
 		else if(this.options.maxLength !== undefined && data.length > this.options.maxLength)
-			result.and({error: StringRuleError.MaxLength, value: data, data: {maxLength: this.options.maxLength, actualLength: data.length}});
+			result.and({name: StringRuleError.MaxLength, value: data, data: {maxLength: this.options.maxLength, actualLength: data.length}});
 
 		if(this.options.regex !== undefined && !this.options.regex.test(data))
-			result.and({error: StringRuleError.Regex, value: data, data: {regex: this.options.regex}});
+			result.and({name: StringRuleError.Regex, value: data, data: {regex: this.options.regex}});
 	}
 }

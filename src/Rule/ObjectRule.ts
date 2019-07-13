@@ -87,7 +87,7 @@ export class ObjectRule implements Rule
 	public validate(data: any, result: RuleResult): void
 	{
 		if(typeof data !== 'object')
-			return void result.and({error: ObjectRuleError.Type, value: data, data: {}});
+			return void result.and({name: ObjectRuleError.Type, value: data, data: {}});
 
 		for(var k of Object.keys(this.structure))
 		{
@@ -96,7 +96,7 @@ export class ObjectRule implements Rule
 			if(typeof data[k] === 'undefined')
 			{
 				if(!element.options.optional)
-					result.and({error: ObjectRuleError.MissingElement, value: data, data: {key: k}})
+					result.and({name: ObjectRuleError.MissingElement, value: data, data: {key: k}})
 
 				continue;
 			}

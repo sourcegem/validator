@@ -87,12 +87,12 @@ export class ArrayRule implements Rule
 	public validate(data: any, result: RuleResult): void
 	{
 		if(!(data instanceof Array))
-			return void result.and({error: ArrayRuleError.Type, value: data, data: {}});
+			return void result.and({name: ArrayRuleError.Type, value: data, data: {}});
 
 		if(this.options.minSize !== undefined && data.length < this.options.minSize)
-			result.and({error: ArrayRuleError.MinSize, value: data, data: {minSize: this.options.minSize, actualSize: data.length}});
+			result.and({name: ArrayRuleError.MinSize, value: data, data: {minSize: this.options.minSize, actualSize: data.length}});
 		else if(this.options.maxSize !== undefined && data.length > this.options.maxSize)
-			result.and({error: ArrayRuleError.MaxSize, value: data, data: {maxSize: this.options.maxSize, actualSize: data.length}});
+			result.and({name: ArrayRuleError.MaxSize, value: data, data: {maxSize: this.options.maxSize, actualSize: data.length}});
 
 		for(var i in data)
 			result.andSub(i.toString(), this.subRule, data[i]);

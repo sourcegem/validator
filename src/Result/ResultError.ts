@@ -14,7 +14,7 @@ export interface ResultError
 	/**
 	 * An identifier string specific to the error.
 	 */
-	error	: string;
+	name	: string;
 
 	/**
 	 * The faulty data value.

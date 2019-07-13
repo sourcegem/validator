@@ -66,9 +66,9 @@ export class BooleanRule implements Rule
 	public validate(data: any, result: RuleResult): void
 	{
 		if(data === null || data === undefined)
-			return void(this.options.nullable ? undefined : result.and({error: BooleanRuleError.Null, value: data, data: {}}));
+			return void(this.options.nullable ? undefined : result.and({name: BooleanRuleError.Null, value: data, data: {}}));
 
 		if(typeof data !== 'boolean')
-			return void result.and({error: BooleanRuleError.Type, value: data, data: {}});
+			return void result.and({name: BooleanRuleError.Type, value: data, data: {}});
 	}
 }
