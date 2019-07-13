@@ -43,6 +43,14 @@ export class OrRule implements Rule
 	public validate(data: any, result: RuleResult): void
 	{
 		for(let rule of this.rules)
-			result.orSub(undefined, rule, data);
+		{
+			let subResult = result.orSub(undefined, rule, data);
+
+			if(subResult.nodes.length === 0)
+			{
+				result.clearNodes();
+				return;
+			}
+		}
 	}
 }
