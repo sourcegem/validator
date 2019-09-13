@@ -3,7 +3,7 @@
  * This code is licensed under the MIT License.
  * See the LICENSE file for more informations.
  *
- * Created by : Matthieu 'Aeres-Blade' Arques <aeresblade@sourcegem.com>
+ * Created by : Matthieu 'Raisenku' Arques <raisenku@sourcegem.com>
  */
 
 import {ResultNode, ResultNodeOperator} from '.';
