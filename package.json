@@ -1,6 +1,6 @@
 {
   "name": "@sourcegem/validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple Node JS data validator",
   "main": "dist/index.js",
   "scripts": {
