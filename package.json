@@ -1,12 +1,12 @@
 {
   "name": "@sourcegem/validator",
   "version": "1.0.1",
-  "description": "A simple Node JS data validator",
-  "main": "dist/index.js",
+  "description": "A simple data validator for web browser and Node JS",
+  "main": "dist/validator/index.js",
   "scripts": {
-    "build": "tsc --declaration",
+    "build": "tsc --declaration && webpack --mode development && webpack --mode production",
     "watch": "tsc --watch",
-    "clean-build": "rimraf ./dist && tsc --declaration",
+    "clean-build": "rimraf ./dist && tsc --declaration && webpack --mode development && webpack --mode production",
     "test": "mocha --require ts-node/register tests/**/*.test.ts"
   },
   "repository": {
@@ -16,6 +16,7 @@
   "keywords": [
     "js",
     "node",
+    "browser",
     "typescript",
     "data",
     "validation"
@@ -32,8 +33,11 @@
     "chai": "^4.2.0",
     "mocha": "^6.2.0",
     "rimraf": "^2.7.1",
+    "ts-loader": "^6.1.0",
     "ts-node": "^8.1.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "webpack": "^4.40.1",
+    "webpack-cli": "^3.3.8"
   },
   "files": [
     "dist/**/*"
